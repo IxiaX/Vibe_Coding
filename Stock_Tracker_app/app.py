@@ -174,6 +174,7 @@ const input = document.getElementById('searchInput');
 const dropdown = document.getElementById('dropdown');
 const stockCard = document.getElementById('stockCard');
 const newsCard = document.getElementById('newsCard');
+const PLACEHOLDER_IMG = {{ placeholder_img | tojson }};
 
 function esc(s) {
   return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -228,7 +229,7 @@ async function selectStock(item) {
     const changeClass = (data.quote.d || 0) >= 0 ? 'up' : 'down';
     stockCard.innerHTML = `
       <div class="row">
-        <img class="logo" src="${esc(data.profile.logo || '${PLACEHOLDER_IMG}')}" alt="logo" onerror="this.src='${PLACEHOLDER_IMG}'" />
+        <img class="logo" src="${esc(data.profile.logo || PLACEHOLDER_IMG)}" alt="logo" onerror="this.src='${PLACEHOLDER_IMG}'" />
         <div>
           <h2 style="margin:0; font-size:1.1rem;">${esc(data.profile.name || item.name)}</h2>
           <div class="muted">${esc(item.symbol)} • ${esc(data.profile.finnhubIndustry || 'N/A')}</div>
@@ -255,7 +256,7 @@ async function selectStock(item) {
     } else {
       html += articles.slice(0, 5).map(n => `
       <article class="news-item">
-        <img class="news-thumb" src="${esc(n.image || '${PLACEHOLDER_IMG}')}" alt="news" onerror="this.src='${PLACEHOLDER_IMG}'" />
+        <img class="news-thumb" src="${esc(n.image || PLACEHOLDER_IMG)}" alt="news" onerror="this.src='${PLACEHOLDER_IMG}'" />
         <div>
           <a href="${esc(n.url || '#')}" target="_blank" rel="noopener noreferrer"><b>${esc(n.headline || 'Untitled')}</b></a>
           <p class="muted" style="margin:8px 0 0;">${esc((n.summary || '').slice(0, 180) || 'No summary available.')}</p>
@@ -295,7 +296,8 @@ loadSymbols().catch(() => {
 </script>
 </body>
 </html>
-"""
+""",
+        placeholder_img=PLACEHOLDER_IMG,
     )
 
 
