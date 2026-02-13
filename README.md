@@ -1,19 +1,18 @@
 # Vibe_Coding
+This repository is now organized as a **multi-project workspace** for all your vibe coding projects.
 
-Python GUI app for quick network utilities.
+## Projects
 
-## Features
+- `NetworkApp/` – Python GUI app for network scanning, IP lookup, and script queue execution.
 
-- **Overview/Landing page** describing the app tools.
-- **Network mapper** button that discovers the default gateway and lists ARP-known connected devices.
-- **IP lookup** for country/region and org/company details of an IP address.
-- **Script queue runner** for `.py`, `.bat/.cmd`, `.bash/.sh` scripts.
+## Adding future projects
 
-## Run
+Create a new top-level folder per project, for example:
 
-```bash
-python3 app.py
+```text
+Vibe_Coding/
+├── NetworkApp/
+├── AnotherCoolApp/
+└── ...
 ```
 
-> On Linux/macOS, ensure `ip` and `arp` commands are available.
-> On Windows, `.bat/.cmd` execution is supported directly.
