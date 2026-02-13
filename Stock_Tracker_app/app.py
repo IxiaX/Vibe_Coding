@@ -228,7 +228,7 @@ async function selectStock(item) {
     const changeClass = (data.quote.d || 0) >= 0 ? 'up' : 'down';
     stockCard.innerHTML = `
       <div class="row">
-        <img class="logo" src="${esc(data.profile.logo || '${PLACEHOLDER_IMG}')}" alt="logo" onerror="this.src='${PLACEHOLDER_IMG}'" />
+        <img class="logo" src="${esc(data.profile.logo || '${"https://i.sstatic.net/y9DpT.jpg"}')}" alt="logo" onerror="this.src='${"https://i.sstatic.net/y9DpT.jpg"}'" />
         <div>
           <h2 style="margin:0; font-size:1.1rem;">${esc(data.profile.name || item.name)}</h2>
           <div class="muted">${esc(item.symbol)} • ${esc(data.profile.finnhubIndustry || 'N/A')}</div>
@@ -255,7 +255,7 @@ async function selectStock(item) {
     } else {
       html += articles.slice(0, 5).map(n => `
       <article class="news-item">
-        <img class="news-thumb" src="${esc(n.image || '${PLACEHOLDER_IMG}')}" alt="news" onerror="this.src='${PLACEHOLDER_IMG}'" />
+        <img class="news-thumb" src="${esc(n.image || '${"https://i.sstatic.net/y9DpT.jpg"}')}" alt="news" onerror="this.src='${"https://i.sstatic.net/y9DpT.jpg"}'" />
         <div>
           <a href="${esc(n.url || '#')}" target="_blank" rel="noopener noreferrer"><b>${esc(n.headline || 'Untitled')}</b></a>
           <p class="muted" style="margin:8px 0 0;">${esc((n.summary || '').slice(0, 180) || 'No summary available.')}</p>
