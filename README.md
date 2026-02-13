@@ -1,5 +1,4 @@
 # Vibe_Coding
-
 This repository is now organized as a **multi-project workspace** for all your vibe coding projects.
 
 ## Projects
@@ -16,3 +15,4 @@ Vibe_Coding/
 ├── AnotherCoolApp/
 └── ...
 ```
+
