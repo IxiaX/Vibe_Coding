@@ -1,6 +1,5 @@
 # Vibe_Coding
-
-This repository is organized as a **multi-project workspace** for all your vibe coding projects.
+This repository is now organized as a **multi-project workspace** for all your vibe coding projects.
 
 ## Projects
 
